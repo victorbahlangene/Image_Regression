@@ -4,8 +4,11 @@ from fastai.vision.widgets import *
 
 import streamlit as st
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+#temp = pathlib.PosixPath
+#pathlib.PosixPath = pathlib.WindowsPath
+
+plt =platform.system()
+if plt == "Windows": pathlib.WindowsPath = pathlib.PosixPath
 
 
 st.header("Image regression")
